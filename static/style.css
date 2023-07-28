@@ -74,6 +74,7 @@ html{
 }
 
 .random {
+  opacity: 1;
   z-index: 1;
   grid-column: span 2;
   max-width: 100%;
@@ -417,8 +418,17 @@ h2{
   padding-bottom: 15px;
 }
 
+.mini_header h2{
+  color:#07073a;
+}
+
 .mini_header img{
   height: 40px;
+}
+
+#info_dezastre{
+  color: #00003e;
+  font-weight: 520;
 }
 
 .paragraph_text{
@@ -427,12 +437,13 @@ h2{
   font-size: 20px;
   /* box-shadow: 3px 3px 3px 3px rgb(214, 214, 227); */
   border-radius: 20px;
-  background-color: aliceblue;
+  background-color: rgb(219, 238, 255);
   position: absolute;
   top: 260px;
   left: 400px;
   z-index: 2;
   width: 720px;
+  word-spacing: 2px;
 }
 
 .wrapper1 {
@@ -469,7 +480,8 @@ p{
  position: relative;
  width: 300px;
  padding-left:0;
-
+font-family: 'Bitter';
+color: #00003e;
 }
 
 .card:hover {
@@ -494,10 +506,16 @@ p{
 
 #card1 {
   border-radius: 80px 0 0 0;
+  margin-top: 0;
 }
 
 #card3 {
   border-radius: 0 0 80px 0;
+  margin-top: 0;
+}
+
+#card2{
+  margin-top: 0;
 }
 
 .card p:hover {
@@ -530,14 +548,20 @@ textarea {
   font-size: 25px;
   color: #332e2e;
   padding-bottom: 10px;
+  padding-left: 600px;
+ font-family: 'Bitter';
+ font-size: 30px;
+ color: #00003e;
 }
 
 #comment {
   font-size: 20px;
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 20px 300px;
   border: solid #332e2e;
   background-color: aliceblue;
   margin-bottom: 50px;
+  margin-left: 260px;
+  width: 610px;
 }
 
 
@@ -591,22 +615,25 @@ input {
 .cards {
 
     position: relative;
-    height: 500px;
+    height: 700px;
     width: 430px;
     margin-bottom: 20px;
-    /* display: flex;
-    align-items: center; */
+    display: flex;
+    align-items: center;
     margin-left: 300px;
     margin-top: 50px;
+    margin-right: 350px;
     perspective: 1000px;
     transform-style: preserve-3d;
+    padding-top: 100px;
     
 }
+
 
 .cards label {
 
     position: absolute;
-    width: 430px;
+    width: 300px;
     left: 0;
     right: 0;
     margin: auto;
@@ -689,7 +716,7 @@ input {
 
 .infos .name{
 
-    font-size: 30px;
+    font-size: 25px;
     color: var(--current-color1);
     letter-spacing: 8px;
     margin-bottom: 20px;
@@ -704,21 +731,10 @@ input {
 
     font-size: 15.5px;
     color: #ECEAED;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color:#030332;
-    text-align: right;
-    
+    text-align: right;   
 }
-footer {
-    background-color: rgb(34, 31, 31);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 150px;
-  }
- span{
-    color:red
- }
 
 
 #s1:checked~.cards #slide4,
@@ -779,8 +795,129 @@ footer {
   display: flex;
   align-items: center;
 }
+Footer
+/* import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"); */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.body_footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 40vh;
+}
+.footer {
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.menu__link {
+  font-size: 20px;
+  color: #fff;
+  margin: 20px;
+  display:inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 700;
+  
+}
 
 
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
 
 
 
