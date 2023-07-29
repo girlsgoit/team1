@@ -213,7 +213,11 @@ html{
     float: right;
     margin-top: 10px;
     margin-right: 100px;
-    transform: scaleX(-1); 
+    transform: scaleX(-1);
+  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);  
+-moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+box-shadow: 12px 20px 81px 0px rgba(0,0,0,0.75); 
+
 }
 
 #schimbarea{

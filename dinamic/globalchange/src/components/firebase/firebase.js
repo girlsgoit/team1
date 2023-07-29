@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { addDoc } from "firebase/firestore"; 
+import { addDoc, deleteDoc } from "firebase/firestore"; 
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAnalytics } from "firebase/analytics";
@@ -31,8 +31,7 @@ const commentsCollection=collection(db, 'comments')
 export const createComment = async comment => {
     // return commentsCollection.add(comments)
     // Add a new document with a generated id.
-   const docRef = await addDoc(collection(db, "comment"), comment);
-console.log("Document written with ID: ", docRef.id);
+   const docRef = await addDoc(collection(db, "comments"), comment);
  return docRef.id;
 
   
@@ -50,8 +49,9 @@ export const updateComment = (id, comment) => {
     // return commentsCollection.doc(id).update(comment)
 }
 
-export const deleteComment = id => {
-    // return commentsCollection.doc(id).delete()
+export const deleteComment = async id => {
+  console.log(id)
+  await deleteDoc(doc(db, "comments", id));
 }
 
 export const useLoadComments = async () => {
@@ -60,8 +60,9 @@ export const useLoadComments = async () => {
       const comments = [];
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        comments.push(doc.data());
+        let object = doc.data()
+        object['id']=doc.id
+        comments.push(object);
       });
       return comments;
     } catch (error) {

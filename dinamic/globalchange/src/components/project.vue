@@ -6,17 +6,17 @@
           </h3>
        
       </header>
-    <section id="showcase">
-      <div class="box1">
-        <h1>Încălzirea<br> Globală</h1>
-      </div>
-      <div class="box2"><div class="wrapper">
-        <img class="random" src="https://source.unsplash.com/random/600x600?climate change" alt="climate change">
-        <img class="random" src="https://source.unsplash.com/random/600x600?global Warming" alt="global warming">
-        <img class="random" src="https://source.unsplash.com/random/600x600?climate change" alt="plants">
-        <img class="random" src="https://source.unsplash.com/random/600x600?glacier" alt="natura">
-        <img class="random" src="https://source.unsplash.com/random/600x600?fire" alt="fireburns">
-        <img class="random" src="https://source.unsplash.com/random/600x600?planet" alt="planet">
+      <section id="showcase">
+        <div class="box1">
+          <h1>Încălzirea<br> Globală</h1>
+        </div>
+        <div class="box2"><div class="wrapper">
+          <img class="random" src="https://source.unsplash.com/random/600x600?climate change" alt="climate change">
+          <img class="random" src="https://source.unsplash.com/random/600x600?global Warming" alt="global warming">
+          <img class="random" src="https://source.unsplash.com/random/600x600?climate change" alt="plants">
+          <img class="random" src="https://source.unsplash.com/random/600x600?glacier" alt="natura">
+          <img class="random" src="https://source.unsplash.com/random/600x600?fire" alt="fireburns">
+          <img class="random" src="https://source.unsplash.com/random/600x600?planet" alt="planet">
         <img class="random" src="https://source.unsplash.com/random/600x600?glacier" alt="glacier">
         <img class="random" src="https://source.unsplash.com/random/600x600?water" alt="water">
         <img class="random" src="https://source.unsplash.com/random/600x600?ice" alt="ice">
@@ -24,9 +24,9 @@
     </div>
 
 </div>
-      
-      
-      <ul class="main_button">
+
+
+<ul class="main_button">
         <li><a id="nav" href="#schimbareaclimatică"><b>Schimbarea Climatică</b></a></li>
         <li><a href="#dezastrenaturale"><b>Dezastre Naturale </b></a></li>
         <li><a href="#topireaghețarilor"><b>Topirea Ghețarilor</b></a></li>
@@ -45,7 +45,7 @@
       <section id="schimbareaclimatică">
     <section id="Antonela"> 
 <section id="info_climate">
-        <img id="image" src="Img/climate.jpg" alt="Climate Change">
+        <img id="image" src="Img/climatechange.jpg" alt="Climate Change">
        <h2 id="schimbarea">Schimbarea</h2>
         <h2 id="climatica">Climatică</h2>
                 <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -402,9 +402,8 @@
             
           </div>
         </label>
-    
         <label for="s5" id="slide5">
-          <div class="card">
+         <div class="card">
             <div class="image">
               <img src="Img/902e5c3e1a0b4feb44d708cc8e6151ff.jpg" alt="Image 5">
               <div class="dots">
@@ -418,14 +417,22 @@
               <span class="lorem">Topirea ghețarilor este o problemă gravă care necesită o atenție imediată. Trebuie să luăm măsuri pentru a reduce emisiile de gaze cu efect de seră și pentru a proteja ghețarii înainte de a fi prea târziu.</span>
             </div>
             </div>
+          </label>
           </div>
-        </label>
       </div>
-    </div>
+  
 </section>
-<textarea name="commenting" id="text_area" cols="80" rows="5" placeholder="Introduceti onesta opinie..." onkeypress="onTextChange(event)"></textarea><br><br><br>
+<textarea v-model="name" placeholder="Introduceti nickname..." ></textarea>
+<textarea v-model="text" name="commenting" id="text_area" cols="80" rows="5" placeholder="Introduceti onesta opinie..." ></textarea>
+<button @click="addComment">Adaugă comentariu</button><br><br><br>
         <h3 id="comment_header">Comentariile existente</h3>
-        <div id="comment"></div>
+        <div id="comment">
+
+          <div v-for="comment in comments">
+            {{ comment.Name }} a spus {{ comment.Text }}
+            <button @click="deleteComment(comment.id)">Șterge comentariul</button>
+          </div>
+        </div>
 
 <section class="body_footer">
     <footer class="footer">
@@ -437,7 +444,8 @@
       </div>
       <ul class="social-icon"> 
         <ion-icon name="logo-instagram"></ion-icon>
-          </a></li>
+        
+        
       </ul>
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="https://www.instagram.com/derrysrules/"> Loredana</a></li>
@@ -449,16 +457,44 @@
       </ul>
       <p>&copy;2023 Through Ice | GirlsGoIT 23'</p>
     </footer>
-   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   
   </section>
 </section>
 
 </template>
 
 <script>
+  import { deleteComment } from "./firebase/firebase";
+import {useLoadComments, createComment } from "./firebase/firebase";
 export default {
-  name:"project"
+  name:"project",
+  data: function(){
+    return{
+      text: "",
+      name:"",
+      comments:[]
+    }
+  },
+  async mounted(){
+    this.getComments()
+  },
+  methods:{
+    getComments: async function(){
+      const comments = await useLoadComments()
+      this.comments = comments
+      return {comments}
+    },
+    addComment: async function(){
+      await createComment({Name:this.name, Text:this.text}).then(async ()=> {
+        await this.getComments()
+      })
+    },
+    deleteComment: async function(id){
+      await deleteComment(id).then(async () => {
+        await this.getComments()
+      })
+    }
+  }
 }
 </script>
 
@@ -968,22 +1004,26 @@ color: #00003e;
   background-color: #332e2e;
   padding: 0 10px;
   height: 400px;
-  color: white;
+  color:#00003e;
+  font-weight: 500;
   transition: all 0.5s ease-out;
 }
 
 #card1 {
   border-radius: 80px 0 0 0;
   margin-top: 0;
+  background-color: #acacfb;
 }
 
 #card3 {
   border-radius: 0 0 80px 0;
   margin-top: 0;
+  background-color: #acacfb;
 }
 
 #card2{
   margin-top: 0;
+  background-color: #acacfb;
 }
 
 .card p:hover {
@@ -1007,8 +1047,11 @@ color: #00003e;
 
 textarea {
   font-size: 20px;
-  padding: 10px;
+  padding: 50px 10px 10px 10px;
   margin: 0 0 20px 260px;
+}
+#text_area{
+  margin-top: 100px;
 }
 
 #comment_header {
@@ -1050,11 +1093,11 @@ textarea {
 #Victoria{
   justify-content: center;
   overflow-x: hidden;
-  height: 110vh;
+  height: 100vh;
   font-style: 'Urbanist', sans-serif;
   align-items: center;
   display: flex;
-  background-image: linear-gradient(#d6d6fa 90%, transparent);
+  background-color: #d6d6fa;
 }
 
 
@@ -1389,9 +1432,19 @@ Footer
 
 
 
+#decor1{
+  width: 80px;
+  opacity: 0.9;
+  padding-top: 70px;
+  padding-left: 100px;
+}
 
+#topireaghețarilor{
+background-color: #d6d6fa;;
+}
 
+html {
+  scroll-behavior: smooth;
 
-
-
+}
 </style>
