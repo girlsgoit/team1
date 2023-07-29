@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+import { addDoc } from "firebase/firestore"; 
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAnalytics } from "firebase/analytics";
@@ -27,8 +28,14 @@ const db=getFirestore(app)
 
 const commentsCollection=collection(db, 'comments')
 
-export const createComment = comment => {
+export const createComment = async comment => {
     // return commentsCollection.add(comments)
+    // Add a new document with a generated id.
+   const docRef = await addDoc(collection(db, "comment"), comment);
+console.log("Document written with ID: ", docRef.id);
+ return docRef.id;
+
+  
 }
 
 export const getComment = async id => {
@@ -62,4 +69,4 @@ export const useLoadComments = async () => {
       return [];
     }
   };
-  
+

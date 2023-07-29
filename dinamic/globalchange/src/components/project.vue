@@ -28,7 +28,7 @@
       
       <ul class="main_button">
         <li><a href="index.html"><b>Schimbarea Climatică</b></a></li>
-        <li><a href="index.html"><b>Dezastre Naturale </b></a></li>
+        <li><a href="index.html"><b>Dezastre Naturale </b></a></li> 
         <li><a href="index.html"><b>Topirea Ghețarilor</b></a></li>
       </ul>
 
