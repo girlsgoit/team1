@@ -319,7 +319,7 @@
 <!-- Victoria -->
 <section id="topireaghețarilor">
 <section id="Victoria">
-    <div class="container">
+    <section class="container">
       <input type="radio" name="slider" class="d-none" id="s1" checked>
       <input type="radio" name="slider" class="d-none" id="s2">
       <input type="radio" name="slider" class="d-none" id="s3">
@@ -418,10 +418,12 @@
               <span class="lorem">Topirea ghețarilor este o problemă gravă care necesită o atenție imediată. Trebuie să luăm măsuri pentru a reduce emisiile de gaze cu efect de seră și pentru a proteja ghețarii înainte de a fi prea târziu.</span>
             </div>
             </div>
-          </div>
-        </label>
-      </div>
-    </div>
+          </label>
+         
+        </div>
+      
+    </section>
+  
 </section>
 <textarea name="commenting" id="text_area" cols="80" rows="5" placeholder="Introduceti onesta opinie..." onkeypress="onTextChange(event)"></textarea><br><br><br>
         <h3 id="comment_header">Comentariile existente</h3>
@@ -437,7 +439,7 @@
       </div>
       <ul class="social-icon"> 
         <ion-icon name="logo-instagram"></ion-icon>
-          </a></li>
+          
       </ul>
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="https://www.instagram.com/derrysrules/"> Loredana</a></li>
