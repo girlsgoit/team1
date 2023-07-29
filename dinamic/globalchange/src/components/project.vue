@@ -27,13 +27,22 @@
       
       
       <ul class="main_button">
-        <li><a href="index.html"><b>Schimbarea Climatică</b></a></li>
-        <li><a href="index.html"><b>Dezastre Naturale </b></a></li> 
-        <li><a href="index.html"><b>Topirea Ghețarilor</b></a></li>
+        <li><a id="nav" href="#schimbareaclimatică"><b>Schimbarea Climatică</b></a></li>
+        <li><a href="#dezastrenaturale"><b>Dezastre Naturale </b></a></li>
+        <li><a href="#topireaghețarilor"><b>Topirea Ghețarilor</b></a></li>
       </ul>
 
     </section>
 
+
+
+
+
+
+
+
+      <!-- Antonela -->
+      <section id="schimbareaclimatică">
     <section id="Antonela"> 
 <section id="info_climate">
         <img id="image" src="Img/climate.jpg" alt="Climate Change">
@@ -57,7 +66,7 @@
 <section id="iframe_info">
 <div class="video" autoplay muted>
     <video width="800px" height="750px" autoplay muted>
-        <source src="Img/What is Climate Change_.mp4" type="video/mp4">
+        <source src="Img/What is Climate Change_.mp4">
     </video>
 </div>
 </section>
@@ -220,6 +229,7 @@
     </section>
     <br><br><br>
 </section> 
+</section>
 
 
 
@@ -228,6 +238,7 @@
 
 
 <!-- Nicoleta -->
+<section id="dezastrenaturale">
 <section id="Nicoleta">
     <div>
         <section id="section1">
@@ -292,8 +303,9 @@
         </section>
         
     </div>
-    
-</section>
+      
+    </section>
+  </section>
 
 
 
@@ -305,6 +317,7 @@
 
 
 <!-- Victoria -->
+<section id="topireaghețarilor">
 <section id="Victoria">
     <div class="container">
       <input type="radio" name="slider" class="d-none" id="s1" checked>
@@ -404,6 +417,7 @@
               <span class="name">Influența</span>
               <span class="lorem">Topirea ghețarilor este o problemă gravă care necesită o atenție imediată. Trebuie să luăm măsuri pentru a reduce emisiile de gaze cu efect de seră și pentru a proteja ghețarii înainte de a fi prea târziu.</span>
             </div>
+            </div>
           </div>
         </label>
       </div>
@@ -412,6 +426,7 @@
 <textarea name="commenting" id="text_area" cols="80" rows="5" placeholder="Introduceti onesta opinie..." onkeypress="onTextChange(event)"></textarea><br><br><br>
         <h3 id="comment_header">Comentariile existente</h3>
         <div id="comment"></div>
+
 <section class="body_footer">
     <footer class="footer">
       <div class="waves">
@@ -422,6 +437,7 @@
       </div>
       <ul class="social-icon"> 
         <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
       </ul>
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="https://www.instagram.com/derrysrules/"> Loredana</a></li>
@@ -433,8 +449,10 @@
       </ul>
       <p>&copy;2023 Through Ice | GirlsGoIT 23'</p>
     </footer>
-
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </section>
+</section>
 
 </template>
 
