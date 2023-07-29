@@ -290,9 +290,7 @@
                 </p>
             </div>
         </section>
-        <textarea name="commenting" id="text_area" cols="80" rows="5" placeholder="Introduceti onesta opinie..." onkeypress="onTextChange(event)"></textarea><br><br><br>
-        <h3 id="comment_header">Comentariile existente</h3>
-        <div id="comment"></div>
+        
     </div>
     
 </section>
@@ -411,6 +409,9 @@
       </div>
     </div>
 </section>
+<textarea name="commenting" id="text_area" cols="80" rows="5" placeholder="Introduceti onesta opinie..." onkeypress="onTextChange(event)"></textarea><br><br><br>
+        <h3 id="comment_header">Comentariile existente</h3>
+        <div id="comment"></div>
 <section class="body_footer">
     <footer class="footer">
       <div class="waves">
