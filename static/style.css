@@ -211,13 +211,12 @@ html{
     width: 800px;
     border-radius: 55px;
     float: right;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-right: 100px;
-    transform: scaleX(-1);
-  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);  
+    transform: scaleX(-1); 
+    -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-box-shadow: 12px 20px 81px 0px rgba(0,0,0,0.75); 
-
+box-shadow: 12px 20px 81px 0px rgba(0,0,0,0.75);
 }
 
 #schimbarea{
@@ -555,6 +554,8 @@ textarea {
 }
 #text_area{
   margin-top: 100px;
+  background-color: #b7b7ff;
+  color:#00003e;
 }
 
 #comment_header {
@@ -564,6 +565,7 @@ textarea {
   padding-bottom: 10px;
   padding-left: 600px;
  font-family: 'Bitter';
+ font-weight: 1700;
  font-size: 30px;
  color: #00003e;
 }
@@ -571,8 +573,9 @@ textarea {
 #comment {
   font-size: 20px;
   padding: 0 20px 20px 300px;
-  border: solid #332e2e;
-  background-color: aliceblue;
+  border: solid #868fe1 1px;
+  background-color: #b7b7ff;
+  color:#00003e;
   margin-bottom: 50px;
   margin-left: 260px;
   width: 610px;
