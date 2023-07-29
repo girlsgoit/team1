@@ -45,7 +45,7 @@
       <section id="schimbareaclimatică">
     <section id="Antonela"> 
 <section id="info_climate">
-        <img id="image" src="Img/climate.jpg" alt="Climate Change">
+        <img id="image" src="Img/climatechange.jpg" alt="Climate Change">
        <h2 id="schimbarea">Schimbarea</h2>
         <h2 id="climatica">Climatică</h2>
                 <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -679,6 +679,9 @@ html{
     margin-top: 10px;
     margin-right: 100px;
     transform: scaleX(-1); 
+     -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+box-shadow: 12px 20px 81px 0px rgba(0,0,0,0.75);
 }
 
 #schimbarea{
@@ -1030,6 +1033,8 @@ textarea {
   margin-bottom: 50px;
   margin-left: 260px;
   width: 610px;
+  background-color: #b7b7ff;
+  color:#00003e;
 }
 
 
@@ -1320,8 +1325,13 @@ Footer
   text-decoration: none;
   opacity: 0.75;
   font-weight: 700;
-  
 }
+
+#text_area{
+  margin-top: 100px;
+  background-color: #b7b7ff;
+  color:#00003e;
+  }
 
 
 .footer p {
