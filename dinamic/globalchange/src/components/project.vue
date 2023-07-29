@@ -45,7 +45,7 @@
       <section id="schimbareaclimatică">
     <section id="Antonela"> 
 <section id="info_climate">
-        <img id="image" src="Img/climatechangechange.jpg" alt="Climate Change">
+        <img id="image" src="Img/climatechange.jpg" alt="Climate Change">
        <h2 id="schimbarea">Schimbarea</h2>
         <h2 id="climatica">Climatică</h2>
                 <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -446,7 +446,6 @@
       </div>
       <ul class="social-icon"> 
         <ion-icon name="logo-instagram"></ion-icon>
-          </a></li>
       </ul>
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="https://www.instagram.com/derrysrules/"> Loredana</a></li>
